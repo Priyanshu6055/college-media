@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -eux
 
-# Ensure PHP & Composer are installed
+# Install PHP & Composer
+apt-get update && apt-get install -y php-cli unzip curl
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
