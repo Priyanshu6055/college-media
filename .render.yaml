@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: laravel-app
+    runtime: php
+    plan: free
+    region: oregon
+    buildCommand: "./render-build.sh"
+    startCommand: "php artisan serve --host=0.0.0.0 --port=$PORT"
+    envVars:
+      - key: "PHP_VERSION"
+        value: "8.2"
