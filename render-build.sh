@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 set -eux
 
-# Install Composer
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
+# Download Composer if not installed
+if ! command -v composer &> /dev/null
+then
+    curl -sS https://getcomposer.org/installer | php
+    mv composer.phar /usr/local/bin/composer
+fi
 
-# Install Laravel dependencies
+# Install PHP dependencies
 composer install --no-dev --optimize-autoloader
 
 # Generate application key
