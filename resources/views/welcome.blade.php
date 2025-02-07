@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>College Social Media</title>
+    <title>College Media</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 <body>
     <div class="d-flex justify-content-center align-items-center min-vh-100">
         <div class="card shadow p-4 text-center">
-            <h2 class="mb-3  ">Welcome to College Connect</h2>
+            <h2 class="mb-3  ">Welcome to College Media</h2>
             <p class="mb-4">Join the social hub for students, share moments, and connect with friends.</p>
             @if (Route::has('login'))
                 <div>

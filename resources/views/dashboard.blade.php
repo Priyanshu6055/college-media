@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram-Like Responsive Layout</title>
+    <title>College Medial</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -91,7 +91,7 @@
                 </h2>
                 <div class="row mt-4">
                     @foreach($photos as $photo)
-                    <div class="col-md-6 mb-4">
+                    <div class="col-12 mb-4">
                         <div class="card">
                             <img src="{{ asset('storage/' . $photo->file_path) }}" class="card-img-top" alt="Photo">
                             <div class="card-body">
