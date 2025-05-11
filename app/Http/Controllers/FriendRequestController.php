@@ -14,8 +14,8 @@ class FriendRequestController extends Controller
     {
         // Fetch pending requests where the user is the receiver
         $pendingRequests = FriendRequest::where('receiver_id', auth()->id())
-                                        ->where('status', 'pending')
-                                        ->get();
+            ->where('status', 'pending')
+            ->get();
 
         return view('student.pending_requests', compact('pendingRequests'));
     }
@@ -36,9 +36,9 @@ class FriendRequestController extends Controller
 
         // Check if a request already exists between the two users
         $existingRequest = FriendRequest::where('sender_id', auth()->id())
-                                        ->where('receiver_id', $request->receiver_id)
-                                        ->where('status', 'pending')
-                                        ->first();
+            ->where('receiver_id', $request->receiver_id)
+            ->where('status', 'pending')
+            ->first();
 
         if ($existingRequest) {
             return back()->with('error', 'You have already sent a friend request to this user.');

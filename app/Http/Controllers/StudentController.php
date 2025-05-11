@@ -31,7 +31,6 @@ class StudentController extends Controller
 
 
 
-
     public function mutualFriends()
     {
         $userId = auth()->id(); // Get the logged-in user ID
@@ -41,9 +40,6 @@ class StudentController extends Controller
 
         return view('student.mutual-friends', compact('mutualFriends'));
     }
-
-
-
 
 
 

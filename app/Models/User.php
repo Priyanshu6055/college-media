@@ -66,11 +66,11 @@ class User extends Authenticatable
     public function friends()
     {
         return $this->belongsToMany(User::class, 'friend_requests', 'sender_id', 'receiver_id')
-                    ->wherePivot('status', 'accepted')
-                    ->orWhere(function ($query) {
-                        $query->where('receiver_id', $this->id)
-                              ->where('status', 'accepted');
-                    });
+            ->wherePivot('status', 'accepted')
+            ->orWhere(function ($query) {
+                $query->where('receiver_id', $this->id)
+                    ->where('status', 'accepted');
+            });
     }
 
 
@@ -84,11 +84,11 @@ class User extends Authenticatable
 
         // Get friends of the logged-in user's friends (friends of friends)
         $friendsOfFriends = User::whereIn('users.id', $userFriends) // Specify 'users.id' to avoid ambiguity
-                                ->with('friends') // Eager load friends
-                                ->get()
-                                ->pluck('friends') // Get the friends of those users
-                                ->flatten()
-                                ->pluck('id'); // Get all the IDs of the friends of friends
+            ->with('friends') // Eager load friends
+            ->get()
+            ->pluck('friends') // Get the friends of those users
+            ->flatten()
+            ->pluck('id'); // Get all the IDs of the friends of friends
 
         // Exclude the logged-in user and their direct friends
         $mutualFriendsIds = $friendsOfFriends->diff($userFriends)->diff([$userId]);
@@ -96,8 +96,4 @@ class User extends Authenticatable
         // Get the mutual friends that are not the logged-in user or their direct friends
         return User::whereIn('users.id', $mutualFriendsIds)->get(); // Specify 'users.id' to avoid ambiguity
     }
-    
-
-    
-
 }
