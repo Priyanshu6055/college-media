@@ -1,66 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+🎓 College Media
+College Media is a full-stack social platform designed specifically for students and teachers. It offers user authentication with role-based access, student-teacher interaction, real-time chat functionality, and media sharing — all tailored to a campus environment.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+🚀 Features
+🔐 Authentication & Role Management
+Secure user authentication with the ability to register as either a Teacher or Student, each with role-specific access and permissions.
 
-## About Laravel
+👨‍🏫 Teacher Role
+Teachers can view, edit, or delete student profiles, allowing effective moderation and management within the system.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+👨‍🎓 Student Role
+Students can:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Send friend requests
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Engage in real-time chat with accepted friends
 
-## Learning Laravel
+Upload and share photos with visibility controls (public or friends-only)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+💬 Chat System
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Single tick indicates the message was delivered (friend is online)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Double tick confirms the message was read
 
-## Laravel Sponsors
+🛠 Tech Stack
+Frontend: HTML, CSS, JavaScript.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Backend: Laravel, PHP
+Database: SQL
 
-### Premium Partners
+Authentication: Session-based.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🛠️ Project Setup (Laravel)
 
-## Code of Conduct
+Follow the steps below to set up and run the project locally.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+### 📆 1. Clone the Repository
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+git clone https://github.com/your-username/college-media.git
+cd college-media
+```
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 📁 2. Install Dependencies
+
+Make sure you have **PHP**, **Composer**, and **Laravel** installed.
+
+```bash
+composer install
+```
+
+If your project uses **npm for frontend assets**, also run:
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+### 🔐 3. Configure Environment
+
+Create a `.env` file by copying the example file:
+
+```bash
+cp .env.example .env
+```
+
+Generate the application key:
+
+```bash
+php artisan key:generate
+```
+
+Update the `.env` file with your database credentials and other environment settings:
+
+```env
+DB_DATABASE=your_database_name
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+---
+
+### 🧰 4. Set Up the Database
+
+Run the migrations and seed the database (if you have seeders):
+
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
+---
+
+### 🚀 5. Start the Development Server
+
+```bash
+php artisan serve
+```
+
+Visit `http://127.0.0.1:8000` in your browser to access the app.
+
+---
+
+### ✅ Optional: Storage & Permissions
+
+If your app handles file uploads or uses storage:
+
+```bash
+php artisan storage:link
+chmod -R 775 storage bootstrap/cache
+```
