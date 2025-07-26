@@ -56,13 +56,6 @@ Make sure you have **PHP**, **Composer**, and **Laravel** installed.
 composer install
 ```
 
-If your project uses **npm for frontend assets**, also run:
-
-```bash
-npm install
-npm run dev
-```
-
 ---
 
 ### 🔐 3. Configure Environment
@@ -95,7 +88,6 @@ Run the migrations and seed the database (if you have seeders):
 
 ```bash
 php artisan migrate
-php artisan db:seed
 ```
 
 ---
@@ -110,9 +102,9 @@ Visit `http://127.0.0.1:8000` in your browser to access the app.
 
 ---
 
-### ✅ Optional: Storage & Permissions
+### ✅ Storage & Permissions
 
-If your app handles file uploads or uses storage:
+Run this for file uploads or uses storage:
 
 ```bash
 php artisan storage:link
