@@ -26,7 +26,8 @@ Double tick confirms the message was read
 🛠 Tech Stack
 Frontend: HTML, CSS, JavaScript.
 
-Backend: Laravel, PHP
+Backend: Laravel, PHP.
+
 Database: SQL
 
 Authentication: Session-based.
